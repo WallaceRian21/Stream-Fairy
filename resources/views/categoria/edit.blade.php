@@ -5,16 +5,16 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card bg-black">
-
                 <div class="card-body" style="color:chartreuse">
-                    <form action="{{ route('categoria.store') }}" method="POST">
+                    <form action="{{ route('categoria.update', $categoria->id) }}" method="POST">
                         @csrf
+                        @method('put')
 
                         <div class="row mb-3">
                             <label for="nome" class="col-md-4 col-form-label text-md-end">{{ __('Nome') }}</label>
 
                             <div class="col-md-6">
-                                <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror" name="nome" value="{{ old('nome') }}" required autocomplete="nome" autofocus>
+                                <input id="nome" type="text" class="form-control @error('nome') is-invalid @enderror" name="nome" value="{{ $categoria->nome }}" required autocomplete="nome" autofocus>
 
                                 @error('nome')
                                     <span class="invalid-feedback" role="alert">
@@ -27,7 +27,7 @@
                         <div class="row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-success">
-                                    {{ __('Registrar Nova Categoria') }}
+                                    {{ __('Editar categoria') }}
                                 </button>
                             </div>
                         </div>

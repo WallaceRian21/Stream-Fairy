@@ -33,11 +33,11 @@
                             <tr>
                                 @foreach($users as $user)
                                    @if ($user->id != Auth::user()->id)
-                                    <th>{{ $user->id }}</th>
-                                    <th>{{ $user->name }}</th>
-                                    <th>{{ $user->created_at }}</th>
-                                    <th>{{ $user->updated_at }}</th>
-                                    <th><a href="/users/edit/{{ $user->id }}">Edit</a></th>
+                                    <td>{{ $user->id }}</td>
+                                    <td>{{ $user->name }}</td>
+                                    <td>{{ $user->created_at }}</td>
+                                    <td>{{ $user->updated_at }}</td>
+                                    <td><a href="/users/edit/{{ $user->id }}">Edit</a></th>
                                     @endif
                                 @endforeach
                             </tr>
